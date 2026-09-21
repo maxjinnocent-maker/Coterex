@@ -1,0 +1,1 @@
+Coterex project initialized.
