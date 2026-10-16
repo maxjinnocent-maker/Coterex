@@ -57,7 +57,9 @@ export const LogoComponent = props => {
   if (isImageAsset(logoImageDesktop) && hasValidLogoSettings && layout === 'desktop') {
     const variants = logoImageDesktop.attributes.variants;
     const variantNames = getVariantNames(variants);
-    const { width } = getVariantData(variants);
+    const { width: baseWidth } = getVariantData(variants);
+const DISPLAY_HEIGHT = 128;
+const width = Math.round(baseWidth * (DISPLAY_HEIGHT / logoSettings.height));
     return (
       <div className={logoClasses} style={{ width: `${width}px` }}>
         <ResponsiveImage
@@ -67,7 +69,7 @@ export const LogoComponent = props => {
           variants={variantNames}
           sizes={`${width}px`}
           width={width}
-          height={logoSettings?.height}
+          height={DISPLAY_HEIGHT}
         />
       </div>
     );

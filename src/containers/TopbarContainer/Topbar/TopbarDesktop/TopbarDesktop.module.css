@@ -26,6 +26,7 @@
 
 /* logo */
 .logoLink {
+  align-self: center;
   border-bottom: 0px solid;
   transition: var(--transitionStyleButton);
 }
