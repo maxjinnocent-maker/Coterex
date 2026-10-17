@@ -5,6 +5,7 @@ import { useConfiguration } from '../../context/configurationContext';
 import { ResponsiveImage } from '../../components/';
 
 import css from './Logo.module.css';
+import coterexLogo from '../../assets/coterex-logo.svg';
 
 const HEIGHT_24 = 24;
 const HEIGHT_36 = 36;
@@ -64,7 +65,7 @@ if (layout === 'desktop') {
         }}
       >
         <img
-          src="/static/coterex-logo.svg"
+          src={coterexLogo}
           alt={marketplaceName}
           style={{ display: 'block', height: '100%', width: 'auto' }}
         />
