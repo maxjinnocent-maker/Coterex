@@ -64,7 +64,7 @@ if (layout === 'desktop') {
         }}
       >
         <img
-          src="/coterex-logo.svg"
+          src="/static/coterex-logo.svg"
           alt={marketplaceName}
           style={{ display: 'block', height: '100%', width: 'auto' }}
         />
