@@ -52,13 +52,32 @@ export const LogoComponent = props => {
     logoImageClassName || css.logo,
     getHeightClassName(logoSettings?.height)
   );
+if (layout === 'desktop') {
+    return (
+      <div
+        className={logoClasses}
+        style={{
+          height: 'var(--topbarHeightDesktop)',
+          width: 'fit-content',
+          maxWidth: 'none',
+          flexShrink: 0,
+        }}
+      >
+        <img
+          src="/coterex-logo.svg"
+          alt={marketplaceName}
+          style={{ display: 'block', height: '100%', width: 'auto' }}
+        />
+      </div>
+    );
+  }
 
   // Logo from hosted asset
   if (isImageAsset(logoImageDesktop) && hasValidLogoSettings && layout === 'desktop') {
     const variants = logoImageDesktop.attributes.variants;
     const variantNames = getVariantNames(variants);
     const { width: baseWidth } = getVariantData(variants);
-const DISPLAY_HEIGHT = 128;
+const DISPLAY_HEIGHT = 200;
 const width = Math.round(baseWidth * (DISPLAY_HEIGHT / logoSettings.height));
     return (
       <div className={logoClasses} style={{ width: `${width}px` }}>
